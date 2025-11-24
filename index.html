@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inter Girls Summer Rowing Plan ☀️</title>
+    
+    <style>
+        /* --- 1. GLOBAL & COLORS --- */
+        :root {
+            --primary-color: #004d99; /* Deep Blue */
+            --secondary-color: #f7b731; /* Gold/Yellow */
+            --accent-pink: #ff4f81;
+            --accent-mint: #3fd0c9;
+            --background-light: #f4f7f6;
+            --text-dark: #222;
+            
+            /* Color-Coding for Sessions */
+            --color-green: #28a745; /* Aerobic/Recovery */
+            --color-red: #dc3545;   /* Power/Threshold */
+            --color-blue: #007bff;  /* Strength/Core */
+            --color-gray: #777;     /* Extra Session */
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--background-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            font-size: 16px;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px 15px 40px;
+        }
+
+        /* --- HEADER / HERO --- */
+        header {
+            background: radial-gradient(circle at top left, var(--accent-mint), var(--primary-color));
+            color: white;
+            padding: 26px 16px 32px;
+            box-shadow: 0 4px 18px rgba(0, 0, 0, 0.25);
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::after {
+            content: "";
+            position: absolute;
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.09);
+            top: -60px;
+            right: -40px;
+        }
+
+        .header-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            position: relative;
+            z-index: 1;
+            flex-wrap: wrap;
+        }
+
+        .header-main {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .header-main h1 {
+            margin: 0 0 4px;
+            font-size: 2.1em;
+            letter-spacing: 0.5px;
+        }
+
+        .header-main p {
+            margin: 0;
+            font-size: 0.95em;
+            opacity: 0.95;
+        }
+
+        .header-bottom {
+            margin-top: 12px;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-tagline {
+            margin-top: 0;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 14px;
+            border-radius: 999px;
+            background: rgba(0, 0, 0, 0.22);
+            font-size: 0.85em;
+            text-transform: uppercase;
+            letter-spacing: 0.13em;
+        }
+
+        .hero-tagline span {
+            font-weight: 600;
+        }
+
+        .hero-pill-row {
+            margin-top: 12px;
+            display: inline-flex;
+            gap: 6px;
+            flex-wrap: wrap;
+            justify-content: center;
+            font-size: 0.8em;
+        }
+
+        .hero-pill {
+            padding: 4px 10px;
+            border-radius: 999px;
+            border: 1px solid rgba(255,255,255,0.6);
+            background: rgba(0,0,0,0.15);
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        /* --- BASIC TYPOGRAPHY --- */
+        h2 {
+            color: var(--primary-color);
+            border-bottom: 3px solid var(--secondary-color);
+            padding-bottom: 5px;
+            margin-top: 28px;
+            font-size: 1.5em;
+        }
+
+        h3 {
+            margin-top: 0;
+        }
+
+        p {
+            margin-top: 0;
+        }
+
+        /* --- PRINT BUTTON --- */
+        .print-button {
+            margin: 0;
+            padding: 8px 14px;
+            border-radius: 999px;
+            border: 1px solid rgba(255,255,255,0.6);
+            background: rgba(0,0,0,0.25);
+            font-size: 0.85em;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            cursor: pointer;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+            color: #fff;
+            white-space: nowrap;
+        }
+
+        .print-button:hover {
+            box-shadow: 0 3px 10px rgba(0,0,0,0.25);
+        }
+
+        @media screen and (max-width: 600px) {
+            .header-inner {
+                align-items: flex-start;
+            }
+        }
+
+        /* --- HOW TO USE CARD --- */
+        .hero-card {
+            background: #ffffff;
+            margin-top: -30px;
+            margin-bottom: 20px;
+            padding: 16px 16px 18px;
+            border-radius: 16px;
+            box-shadow: 0 8px 22px rgba(0,0,0,0.15);
+            position: relative;
+            z-index: 10;
+        }
+
+        .hero-card-title {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 8px;
+        }
+
+        .hero-card-title span.badge {
+            font-size: 0.8em;
+            padding: 3px 9px;
+            border-radius: 999px;
+            background: rgba(63, 208, 201, 0.14);
+            color: var(--primary-color);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+
+        .hero-card ul {
+            margin: 10px 0 6px;
+            padding-left: 16px;
+            font-size: 0.95em;
+        }
+
+        .hero-card li {
+            margin-bottom: 4px;
+        }
+
+        .hero-note {
+            font-size: 0.85em;
+            opacity: 0.8;
+            margin-top: 6px;
+        }
+
+        /* --- QUICK WEEK NAV --- */
+        .quick-nav {
+            margin: 18px 0 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .quick-nav-label {
+            font-size: 0.85em;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: #555;
+        }
+
+        .quick-nav-pills {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            overflow-x: auto;
+        }
+
+        .quick-nav-pills a {
+            font-size: 0.85em;
+            padding: 6px 11px;
+            border-radius: 999px;
+            border: 1px solid rgba(0,0,0,0.15);
+            background: #ffffff;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            white-space: nowrap;
+            transition: transform 0.1s ease, box-shadow 0.1s ease;
+        }
+
+        .quick-nav-pills a span.dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--accent-pink);
+        }
+
+        .quick-nav-pills a:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+        }
+
+        /* --- 2. LEGEND & REQUIREMENTS --- */
+        .session-requirements,
+        .legend {
+            background-color: #fff;
+            padding: 18px;
+            border-radius: 12px;
+            margin-bottom: 18px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .session-requirements {
+            border-left: 5px solid var(--secondary-color);
+        }
+        
+        .session-requirements ul {
+            list-style: none;
+            padding: 0;
+            margin: 10px 0 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px 20px;
+        }
+
+        .session-requirements li {
+            width: 100%;
+            max-width: 320px;
+            font-size: 0.95em;
+        }
+        
+        .req-green { color: var(--color-green); font-weight: bold; }
+        .req-red { color: var(--color-red); font-weight: bold; }
+        .req-blue { color: var(--color-blue); font-weight: bold; }
+        .req-gray { color: var(--color-gray); font-weight: bold; }
+
+        .legend {
+            margin-top: 6px;
+        }
+
+        .legend-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px 18px;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 4px;
+            font-size: 0.9em;
+        }
+
+        .legend-color-box {
+            width: 20px;
+            height: 20px;
+            border-radius: 6px;
+            margin-right: 8px;
+            border: 1px solid #ccc;
+        }
+
+        .legend-color-box.green { background-color: #e6f7eb; border-color: var(--color-green); }
+        .legend-color-box.red   { background-color: #fce6e8; border-color: var(--color-red); }
+        .legend-color-box.blue  { background-color: #e6f1ff; border-color: var(--color-blue); }
+        .legend-color-box.gray  { background-color: #f0f0f0; border-color: var(--color-gray); }
+
+        .legend-tag {
+            font-size: 0.75em;
+            padding: 2px 7px;
+            border-radius: 999px;
+            background: #f1f1f1;
+            margin-left: 6px;
+        }
+
+        /* --- 3. TRAINING PLAN (DESKTOP TABLE) --- */
+
+        .training-plan-wrapper {
+            margin-top: 18px;
+        }
+
+        .training-plan {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 8px;
+            font-size: 0.9em;
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .training-plan th,
+        .training-plan td {
+            padding: 12px 10px;
+            text-align: left;
+            border: 1px solid #eee;
+            vertical-align: top;
+        }
+
+        .training-plan th {
+            background-color: var(--primary-color);
+            color: white;
+            font-weight: 600;
+        }
+
+        .training-plan tbody tr:nth-child(even) {
+            background-color: #fafafa;
+        }
+        
+        /* Session cell background tints (desktop) */
+        .s1-cell { background-color: #e6f7eb; } 
+        .s2-cell { background-color: #fce6e8; } 
+        .s3-cell { background-color: #e6f1ff; } 
+        .s4-cell { background-color: #f7fcf9; } 
+        .s5-cell { background-color: #f5f5f5; } 
+
+        .training-plan td strong {
+            font-weight: 700;
+        }
+
+        .week-label-desktop {
+            font-weight: 700;
+        }
+
+        .week-theme-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            margin-top: 4px;
+            font-size: 0.8em;
+            padding: 2px 8px;
+            border-radius: 999px;
+            background: rgba(0,0,0,0.04);
+        }
+
+        /* --- 4. MOBILE CARD LAYOUT (SCREEN ONLY) --- */
+        @media screen and (max-width: 768px) {
+
+            .header-main h1 {
+                font-size: 1.6em;
+            }
+
+            .container {
+                padding: 15px 12px 30px;
+            }
+
+            h2 {
+                font-size: 1.3em;
+            }
+
+            .session-requirements ul {
+                flex-direction: column;
+                gap: 6px;
+            }
+
+            .training-plan {
+                border-collapse: separate;
+                border-spacing: 0;
+                background: transparent;
+            }
+
+            .training-plan thead {
+                display: none; /* hide column headers */
+            }
+
+            .training-plan,
+            .training-plan tbody,
+            .training-plan tr,
+            .training-plan td {
+                display: block;
+                width: 100%;
+            }
+
+            .training-plan tr {
+                margin-bottom: 20px;
+                background-color: #fff;
+                border-radius: 14px;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+                overflow: hidden;
+            }
+
+            .training-plan td {
+                border: 0;
+                padding: 10px 12px;
+                font-size: 0.9em;
+                line-height: 1.5;
+                word-break: break-word;
+            }
+
+            /* Week cell becomes the card header */
+            .training-plan td:first-child {
+                background: linear-gradient(90deg, var(--primary-color), var(--accent-mint));
+                color: #fff;
+                font-weight: 700;
+                font-size: 1em;
+            }
+
+            .training-plan td:first-child::before {
+                content: "Week";
+                display: block;
+                font-size: 0.75em;
+                text-transform: uppercase;
+                letter-spacing: 0.08em;
+                opacity: 0.8;
+                margin-bottom: 2px;
+            }
+
+            .week-theme-tag {
+                display: block;
+                margin-top: 2px;
+                background: rgba(0,0,0,0.16);
+                font-size: 0.8em;
+                padding: 3px 8px;
+                border-radius: 999px;
+            }
+
+            /* Other cells get a small label above content */
+            .training-plan td:not(:first-child) {
+                border-top: 1px solid #f0f0f0;
+            }
+
+            .training-plan td:not(:first-child)::before {
+                content: attr(data-label);
+                display: block;
+                font-size: 0.75em;
+                font-weight: 600;
+                text-transform: uppercase;
+                letter-spacing: 0.06em;
+                margin-bottom: 4px;
+                color: var(--primary-color);
+                opacity: 0.9;
+            }
+
+            /* Color the labels by session type (easy to scan) */
+            .training-plan td.s1-cell::before { color: var(--color-green); }
+            .training-plan td.s2-cell::before { color: var(--color-red); }
+            .training-plan td.s3-cell::before { color: var(--color-blue); }
+            .training-plan td.s4-cell::before { color: var(--color-green); }
+            .training-plan td.s5-cell::before { color: var(--color-gray); }
+
+            /* Tidy the tints: left border colour strip instead of full tint */
+            .training-plan td.s1-cell,
+            .training-plan td.s2-cell,
+            .training-plan td.s3-cell,
+            .training-plan td.s4-cell,
+            .training-plan td.s5-cell {
+                background-color: #fff;
+                border-left-width: 4px;
+                border-left-style: solid;
+            }
+
+            .training-plan td.s1-cell { border-left-color: var(--color-green); }
+            .training-plan td.s2-cell { border-left-color: var(--color-red); }
+            .training-plan td.s3-cell { border-left-color: var(--color-blue); }
+            .training-plan td.s4-cell { border-left-color: var(--color-green); }
+            .training-plan td.s5-cell { border-left-color: var(--color-gray); }
+        }
+
+        /* --- 5. EXTRA INFO / FOOTER --- */
+
+        .coach-notes {
+            margin-top: 24px;
+            background: #ffffff;
+            padding: 16px 16px 14px;
+            border-radius: 12px;
+            box-shadow: 0 2px 9px rgba(0,0,0,0.06);
+            font-size: 0.9em;
+        }
+
+        .coach-notes-title {
+            font-weight: 600;
+            margin-bottom: 4px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .coach-notes ul {
+            margin: 8px 0 4px;
+            padding-left: 18px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 16px 0 20px;
+            margin-top: 20px;
+            color: #777;
+            font-size: 0.8em;
+            border-top: 1px solid #ccc;
+        }
+
+        @media screen and (max-width: 480px) {
+            .hero-card {
+                margin-top: -24px;
+            }
+        }
+
+        /* --- 6. PRINT-FRIENDLY MODE --- */
+        @media print {
+            @page {
+                margin: 15mm;
+            }
+
+            body {
+                background: #ffffff;
+                color: #000000;
+                font-size: 11pt;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            header {
+                background: #ffffff !important;
+                color: #000000 !important;
+                box-shadow: none !important;
+                padding-bottom: 8px;
+            }
+
+            header::after {
+                display: none !important;
+            }
+
+            /* Hide UI-only elements */
+            .hero-pill-row,
+            .quick-nav,
+            .hero-note,
+            .legend-tag,
+            .print-button {
+                display: none !important;
+            }
+
+            .hero-card,
+            .session-requirements,
+            .legend,
+            .coach-notes {
+                box-shadow: none !important;
+                border: 1px solid #dddddd;
+            }
+
+            .container {
+                max-width: 100%;
+                padding: 0;
+            }
+
+            /* Force classic table layout for printing */
+            .training-plan-wrapper {
+                margin-top: 10px;
+            }
+
+            .training-plan {
+                width: 100%;
+                background: #ffffff;
+                border-radius: 0;
+                box-shadow: none;
+                border-collapse: collapse;
+                display: table !important;
+            }
+
+            .training-plan thead {
+                display: table-header-group !important;
+            }
+
+            .training-plan tbody {
+                display: table-row-group !important;
+            }
+
+            .training-plan tr {
+                display: table-row !important;
+                box-shadow: none !important;
+                background: transparent !important;
+                page-break-inside: avoid;
+            }
+
+            .training-plan th,
+            .training-plan td {
+                display: table-cell !important;
+                border: 1px solid #cccccc !important;
+                padding: 6px 6px !important;
+                font-size: 10pt;
+            }
+
+            .training-plan td:first-child::before,
+            .training-plan td:not(:first-child)::before {
+                content: none !important;
+            }
+
+            .training-plan td.s1-cell,
+            .training-plan td.s2-cell,
+            .training-plan td.s3-cell,
+            .training-plan td.s4-cell,
+            .training-plan td.s5-cell {
+                border-left-width: 1px !important;
+                border-left-style: solid !important;
+            }
+
+            footer {
+                border-top: none;
+                margin-top: 10mm;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-inner">
+            <div class="header-main">
+                <h1>🚣‍♀️ Inter Girls Summer Fitness Plan</h1>
+                <p>Lake Wendouree · 7 Weeks to Come Back Stronger</p>
+            </div>
+            <button class="print-button" onclick="window.print()">
+                🖨️ Print this plan
+            </button>
+        </div>
+
+        <div class="header-bottom">
+            <div class="hero-tagline">
+                <span>LEVEL UP YOUR ENGINE</span> <span>⚡</span>
+            </div>
+
+            <div class="hero-pill-row">
+                <div class="hero-pill">💚 Base Fitness</div>
+                <div class="hero-pill">🔥 Power & Speed</div>
+                <div class="hero-pill">🧱 Strength/Core</div>
+                <div class="hero-pill">🌿 Recovery</div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+
+        <!-- HOW TO USE -->
+        <section class="hero-card">
+            <div class="hero-card-title">
+                <span>🎯</span>
+                <div>
+                    <strong>Summer Goal:</strong> Stay fit, get powerful, and roll into Term 1 ready to go.
+                </div>
+            </div>
+            <div class="hero-card-title">
+                <span class="badge">How it works</span>
+            </div>
+            <ul>
+                <li><strong>Pick 4–6 sessions</strong> each week (mix from S1–S5).</li>
+                <li><strong>Any sport counts</strong> – run, ride, swim, gym, ergs, stairs… just hit the effort level.</li>
+                <li><strong>Green = chill but steady</strong>, <strong>Red = spicy</strong>, <strong>Blue = strength</strong>, <strong>Gray = bonus</strong>.</li>
+            </ul>
+            <p class="hero-note">Your “superpower” is consistency. Even on busy weeks, 3–4 sessions done well beats 0 perfect sessions. 💪</p>
+        </section>
+
+        <!-- QUICK NAV -->
+        <div class="quick-nav">
+            <div class="quick-nav-label">Jump to week</div>
+            <div class="quick-nav-pills">
+                <a href="#week1-2"><span class="dot"></span> Week 1–2 · Reset</a>
+                <a href="#week3-4"><span class="dot"></span> Week 3–4 · Engine Room</a>
+                <a href="#week5-6"><span class="dot"></span> Week 5–6 · Power Up</a>
+                <a href="#week7"><span class="dot"></span> Week 7 · Test Week</a>
+            </div>
+        </div>
+
+        <!-- REQUIREMENTS -->
+        <div class="session-requirements">
+            <h3>📋 Your Weekly “Formula”</h3>
+            <ul>
+                <li><span class="req-green">2x</span> Session 1: Aerobic Endurance (45–60 min)</li>
+                <li><span class="req-red">1x</span> Session 2: Power/Threshold (Erg or Alternative)</li>
+                <li><span class="req-blue">1–2x</span> Session 3: Strength/Core (30–45 min)</li>
+                <li><span class="req-green">1x</span> Session 4: Active Recovery/Mobility</li>
+                <li><span class="req-gray">0–1x</span> Session 5: Extra Session (Optional Volume)</li>
+            </ul>
+        </div>
+
+        <!-- LEGEND -->
+        <div class="legend">
+            <h3>🎨 Session Colour Key</h3>
+            <div class="legend-row">
+                <div class="legend-item">
+                    <span class="legend-color-box green"></span> 
+                    <span>Aerobic / Recovery 
+                        <span class="legend-tag">💚 Green Zone</span>
+                    </span>
+                </div>
+                <div class="legend-item">
+                    <span class="legend-color-box red"></span> 
+                    <span>Power / Threshold 
+                        <span class="legend-tag">🔥 Red Zone</span>
+                    </span>
+                </div>
+                <div class="legend-item">
+                    <span class="legend-color-box blue"></span> 
+                    <span>Strength / Core 
+                        <span class="legend-tag">🧱 Blue Zone</span>
+                    </span>
+                </div>
+                <div class="legend-item">
+                    <span class="legend-color-box gray"></span> 
+                    <span>Extra / Optional 
+                        <span class="legend-tag">➕ Bonus</span>
+                    </span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- TRAINING PLAN -->
+        <section class="training-plan-wrapper">
+            <h2>📅 7-Week Progressive Training Plan</h2>
+
+            <table class="training-plan">
+                <thead>
+                    <tr>
+                        <th>Week</th>
+                        <th>Focus & Theme</th>
+                        <th>S1: Aerobic Endurance (2x/wk)</th>
+                        <th>S2: Power/Threshold (1x/wk)</th>
+                        <th>S3: Strength/Core (1-2x/wk)</th>
+                        <th>S4: Active Recovery (1x/wk)</th>
+                        <th>S5: Extra Session (0-1x/wk)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    <!-- Week 1–2 -->
+                    <tr id="week1-2">
+                        <td data-label="Week">
+                            <span class="week-label-desktop">1–2</span>
+                            <span class="week-theme-tag">🏁 Reset & Routine</span>
+                        </td>
+                        <td data-label="Focus & Theme">
+                            <strong>Re-Establish Base & Routine.</strong> Comm. Theme: "Setting the Pace"
+                        </td>
+                        <td data-label="S1: Aerobic" class="s1-cell">
+                            <strong>45 min</strong> continuous effort (<strong>UT2/Conversational</strong> pace). Run, bike, or swim.
+                        </td>
+                        <td data-label="S2: Power/Threshold" class="s2-cell">
+                            <strong>ERG OPTION:</strong> 4 x 5 min (3 min rest) @ R24. <strong>NO-ERG ALT:</strong> <strong>10 x 1 min hard sprint</strong> / 1 min rest.
+                        </td>
+                        <td data-label="S3: Strength/Core" class="s3-cell">
+                            <strong>NO-GYM:</strong> Circuit 1 (<strong>Squats, Push-ups, Plank</strong>). <strong>GYM:</strong> Machine technique, light weights.
+                        </td>
+                        <td data-label="S4: Recovery" class="s4-cell">
+                            <strong>30 min Mobility Focus:</strong> Gentle stretching, Cat-Cow, Downward Dog. Focus on <strong>Hip Flexors</strong>.<br><br>
+                        </td>
+                        <td data-label="S5: Extra" class="s5-cell">
+                            Add 15 mins to one Aerobic Session <strong>OR</strong> Social Activity (Walk/Swim).
+                        </td>
+                    </tr>
+
+                    <!-- Week 3–4 -->
+                    <tr id="week3-4">
+                        <td data-label="Week">
+                            <span class="week-label-desktop">3–4</span>
+                            <span class="week-theme-tag">🚂 Engine Room</span>
+                        </td>
+                        <td data-label="Focus & Theme">
+                            <strong>Build Volume & Threshold.</strong> Comm. Theme: "Engine Room"
+                        </td>
+                        <td data-label="S1: Aerobic" class="s1-cell">
+                            <strong>50 min</strong> continuous effort. Add <strong>3 x 3 min</strong> pieces at a slightly higher effort (<strong>UT1</strong>) within the session.
+                        </td>
+                        <td data-label="S2: Power/Threshold" class="s2-cell">
+                            <strong>ERG OPTION:</strong> 3 x 8 min (4 min rest) @ R22. <strong>NO-ERG ALT:</strong> <strong>Hill Sprints/Stairs:</strong> <strong>8 x 45 sec</strong> max uphill sprint / walk down recovery.
+                        </td>
+                        <td data-label="S3: Strength/Core" class="s3-cell">
+                            <strong>NO-GYM:</strong> Circuit 2 (Add <strong>Jump Squats/Lunges</strong>). <strong>GYM:</strong> Free Weights: <strong>Goblet Squat</strong> focus, Dumbbell Row.
+                        </td>
+                        <td data-label="S4: Recovery" class="s4-cell">
+                            <strong>30 min Water Recovery:</strong> Continuous kicking with a board or water treading. Focus on <strong>Core stability</strong>.
+                        </td>
+                        <td data-label="S5: Extra" class="s5-cell">
+                            Add 1x Bodyweight/Core Circuit <strong>OR</strong> 60 min Easy Cycle.
+                        </td>
+                    </tr>
+
+                    <!-- Week 5–6 -->
+                    <tr id="week5-6">
+                        <td data-label="Week">
+                            <span class="week-label-desktop">5–6</span>
+                            <span class="week-theme-tag">⚡ Power Up</span>
+                        </td>
+                        <td data-label="Focus & Theme">
+                            <strong>Peak Aerobic Volume & Power.</strong> Comm. Theme: "Closing the Gap"
+                        </td>
+                        <td data-label="S1: Aerobic" class="s1-cell">
+                            <strong>60 min</strong> continuous effort. Use <strong>Fartlek</strong> (30 sec hard/30 sec easy) for 10 min blocks.
+                        </td>
+                        <td data-label="S2: Power/Threshold" class="s2-cell">
+                            <strong>ERG OPTION:</strong> 4 x 1,000m (4 min rest) @ R24-26. <strong>NO-ERG ALT:</strong> <strong>Cycling Intervals:</strong> <strong>6 x 3 min</strong> hard cycle / 3 min easy cycle.
+                        </td>
+                        <td data-label="S3: Strength/Core" class="s3-cell">
+                            <strong>NO-GYM:</strong> Circuit 3 (Increase <strong>Time Under Tension</strong>/slow negatives). <strong>GYM:</strong> Power/Full Body: Heavier focus on form/<strong>Squat/Deadlift</strong>.
+                        </td>
+                        <td data-label="S4: Recovery" class="s4-cell">
+                            <strong>30 min Focused Foam Rolling</strong> & static stretching (Hips, Hamstrings). Focus on <strong>full body relaxation</strong>.
+                        </td>
+                        <td data-label="S5: Extra" class="s5-cell">
+                            Add a second Power/Threshold session <strong>OR</strong> Long <strong>75-min</strong> Easy Run/Bike.
+                        </td>
+                    </tr>
+
+                    <!-- Week 7 -->
+                    <tr id="week7">
+                        <td data-label="Week">
+                            <span class="week-label-desktop">7</span>
+                            <span class="week-theme-tag">🚀 Test Week</span>
+                        </td>
+                        <td data-label="Focus & Theme">
+                            <strong>Re-Entry Taper & Test Prep.</strong> Comm. Theme: "Ready to Launch"
+                        </td>
+                        <td data-label="S1: Aerobic" class="s1-cell">
+                            <strong>2 x 20 min</strong> easy continuous effort. Feel "light."
+                        </td>
+                        <td data-label="S2: Power/Threshold" class="s2-cell">
+                            <strong>ERG OPTION:</strong> <strong>1 x 1000m Max Test.</strong> <strong>NO-ERG ALT:</strong> <strong>Short Flat Sprints:</strong> <strong>5 x 200m</strong> near max effort / 2 min rest.
+                        </td>
+                        <td data-label="S3: Strength/Core" class="s3-cell">
+                            <strong>Rest/Mobility Focus:</strong> 30 min gentle stretching.
+                        </td>
+                        <td data-label="S4: Recovery" class="s4-cell">
+                            <strong>Complete REST.</strong> Minimal activity.
+                        </td>
+                        <td data-label="S5: Extra" class="s5-cell">
+                            Complete REST. Focus on sleep and nutrition for return.
+                        </td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </section>
+
+        <!-- COACH NOTES / SAFETY -->
+        <section class="coach-notes">
+            <div class="coach-notes-title">
+                <span>👟 Coach Notes</span>
+            </div>
+            <ul>
+                <li><strong>Plan designed for consistency over perfection!</strong></li>
+                <li>Always warm up for 5–10 minutes before the “hard” part of any session.</li>
+                <li>If something hurts in a bad way (sharp pain, dizziness, chest pain), <strong>stop</strong> and tell an adult.</li>
+                <li>Hot days: train earlier/later, drink plenty of water, and be smart with intensity.</li>
+                <li>Use this plan as your guide – it’s okay to swap days around to fit life, work, and family.</li>
+            </ul>
+        </section>
+        
+    </div>
+    
+    <footer>
+        &copy; '25/26' Inter Girls Rowing. Designed by Leigh, Ash, Clodagh & Andrew. 🌊
+    </footer>
+
+</body>
+</html>
