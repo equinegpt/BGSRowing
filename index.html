@@ -79,6 +79,11 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem
   .plan th,.plan td{padding:.35rem .4rem}
   .plan td.aer::after,.plan td.pow::after,.plan td.str::after,.plan td.rec::after,.plan td.ext::after{content:"";display:block;margin-top:5px;border:1px dashed #999;border-radius:3px;height:16px}
   .plan tr{break-inside:avoid}
+  #plan{break-before:page;margin-top:0}
+  h2{break-after:avoid}
+  .notes{padding:.4rem .8rem}
+  .notes ul{columns:2;column-gap:2rem}
+  .notes li{break-inside:avoid;margin-bottom:.15rem}
   footer{padding:.6rem 0 0;font-size:8pt}
 }
 </style>
@@ -130,7 +135,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem
     </section>
   </div>
 
-  <h2>Seven-week plan</h2>
+  <h2 id="plan">Seven-week plan</h2>
   <div class="jump"><span>Jump to</span><a href="#w12">Weeks 1–2</a><a href="#w34">Weeks 3–4</a><a href="#w56">Weeks 5–6</a><a href="#w7">Week 7</a></div>
 
   <div class="table-wrap">
